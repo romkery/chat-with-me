@@ -1,0 +1,105 @@
+@import "./src/styles/variables";
+
+.message {
+
+  $self: &;
+
+  &__content {
+    display: flex;
+    max-width: 440px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  &__avatar {
+    display: flex;
+    flex-flow: column-reverse;
+
+    img {
+      border-radius: 50px;
+      width: 35px;
+      height: 35px;
+      margin-right: 13px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__bubble {
+    display: inline-block;
+    background: #FFFFFF;
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.06);
+    border-radius: 8px 8px 8px 0;
+    padding: 0.2rem 0.5rem 0.375rem 0.625rem;
+    margin-bottom: 6px;
+    border: 1px solid #ececec;
+  }
+
+  &__date {
+    display: block;
+    font-size: 12px;
+    opacity: 0.4;
+  }
+
+  &__text {
+    color: $black;
+    line-height: 1.32;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+  }
+
+  &__attachments {
+    display: flex;
+    &-item {
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 8px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__icon-checked {
+    position: absolute;
+    bottom: 32px;
+    left: -20px;
+  }
+
+  &--isMe {
+    display: flex;
+    flex-flow: row-reverse;
+
+    #{$self}__bubble {
+      background: $blue;
+      box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.06);
+      border-radius: 8px 8px 0 8px;
+
+      #{$self}__text {
+        color: #FFFFFF;
+      }
+    }
+
+    #{$self}__avatar {
+      img {
+        margin-right: 0;
+        margin-left: 13px;
+      }
+    }
+
+    #{$self}__content {
+      flex-flow: row-reverse;
+    }
+
+    #{$self}__date {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
