@@ -1,31 +1,31 @@
 import React from 'react';
 import {Form, Input} from "antd";
 import {LockOutlined, UserOutlined} from "@ant-design/icons";
-import {Link, Router, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Button from "../../../components/Button/Button";
 import Block from "../../../components/Block/Block";
 import "./../../../pages/Auth/Auth.scss"
-import {FormikErrors, FormikState, FormikValues, useFormik} from "formik";
+// @ts-ignore
+import validateForm from './../../../utils/helpers/validate'
+// @ts-ignore
+import validateField from './../../../utils/helpers/validateField'
+import {FormikErrors, useFormik} from "formik";
 
 const LoginForm = () => {
 
     const formik = useFormik({
         initialValues: {
-            user: '',
+            email: '',
             password: '',
         },
-        validate: (values:FormValues) => {
+        validateOnChange: true,
+        validate: (values: FormValues) => {
 
-            let errors:FormikErrors<FormValues> = {}
-                if (!values.password) {
-                    errors.password = 'Required';
-                } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.password)) {
-                    errors.password = 'Invalid email address';
-                }
+            let errors: FormikErrors<FormValues> = {}
+            validateForm({isAuth: true, values, errors})
 
-
-                return errors;
-            },
+            return errors;
+        },
 
         onSubmit: values => {
             console.log(JSON.stringify(values, null, 2));
@@ -45,30 +45,32 @@ const LoginForm = () => {
                     initialValues={{remember: true}}
                     onFinish={formik.handleSubmit}>
                     <Form.Item
-                        name="username"
+                        name="email"
                         hasFeedback
-                        validateStatus="success"
-                        rules={[{required: true, message: 'Please input your Username!'}]}>
+                        validateStatus={validateField('email', formik)}
+                        help={!formik.touched.email ? '' : formik.errors.email}>
                         <Input prefix={<UserOutlined className="site-form-item-icon"/>}
                                size='large'
-                               placeholder="Username"
-                               id="user"
-                               name="user"
+                               placeholder="E-mail"
+                               id="email"
+                               name="email"
+                               onBlur={formik.handleBlur}
                                onChange={formik.handleChange}
-                               value={formik.values.user}/>
+                               value={formik.values.email}/>
                     </Form.Item>
 
                     <Form.Item
                         name="password"
                         hasFeedback
-                        validateStatus="success"
-                        rules={[{required: true, message: 'Please input your Password!'}]}>
+                        validateStatus={validateField('password', formik)}
+                        help={!formik.touched.password ? '' : formik.errors.password}>
                         <Input
                             prefix={<LockOutlined className="site-form-item-icon"/>}
                             type="password"
                             size='large'
                             placeholder="Password"
                             name="password"
+                            onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
                             value={formik.values.password}/>
 
@@ -89,6 +91,6 @@ const LoginForm = () => {
 export default LoginForm;
 
 type FormValues = {
-   user: string
-   password: string
+    email: string
+    password: string
 }

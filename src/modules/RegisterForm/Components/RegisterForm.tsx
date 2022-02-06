@@ -6,6 +6,9 @@ import Button from "../../../components/Button/Button";
 import Block from "../../../components/Block/Block";
 import "./../../../pages/Auth/Auth.scss"
 import {FormikErrors, useFormik} from "formik";
+// @ts-ignore
+import validateForm from './../../../utils/helpers/validate'// @ts-ignore
+import validateField from './../../../utils/helpers/validateField'
 
 const RegisterForm = () => {
 
@@ -16,7 +19,7 @@ const RegisterForm = () => {
             email: '',
             username: '',
             password: '',
-            repeatPassword: '',
+            password2: '',
         },
 
         validateOnChange: true,
@@ -24,22 +27,7 @@ const RegisterForm = () => {
         validate: (values: FormValues) => {
 
             let errors: FormikErrors<FormValues> = {}
-            if (!values.email) {
-                errors.email = 'Required';
-            } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-                errors.email = 'Invalid email address';
-            }
-
-            if (!values.username) {
-                errors.username = 'Required';
-            }
-            if (!values.password) {
-                errors.password = 'Required';
-            }
-            if (!values.repeatPassword) {
-                errors.repeatPassword = 'Required';
-            }
-
+            validateForm({isAuth: false, values, errors})
 
             return errors;
         },
@@ -66,8 +54,8 @@ const RegisterForm = () => {
                             <Form.Item
                                 name="email"
                                 hasFeedback
-                                validateStatus={!formik.touched.email ? '' : formik.errors.email ? 'error' : 'success'}
-                                rules={[{required: true, message: 'Please input your E-mail!'}]}>
+                                validateStatus={validateField('email', formik)}
+                                help={!formik.touched.email ? '' : formik.errors.email}>
                                 <Input prefix={<MailOutlined className="site-form-item-icon"/>}
                                        placeholder='E-Mail'
                                        type="email"
@@ -81,8 +69,8 @@ const RegisterForm = () => {
                             <Form.Item
                                 name="user"
                                 hasFeedback
-                                validateStatus={!formik.touched.username ? '' : formik.errors.username ? 'error' : 'success'}
-                                rules={[{required: true, message: 'Please input your Name!'}]}>
+                                validateStatus={validateField('username', formik)}
+                                help={!formik.touched.username ? '' : formik.errors.username}>
                                 <Input
                                     prefix={<UserOutlined className="site-form-item-icon"/>}
                                     type="user"
@@ -97,8 +85,8 @@ const RegisterForm = () => {
                             <Form.Item
                                 name="password"
                                 hasFeedback
-                                validateStatus={!formik.touched.password ? '' : formik.errors.password ? 'error' : 'success'}
-                                rules={[{required: true, message: 'Please input your Password!'}]}>
+                                validateStatus={validateField('password', formik)}
+                                help={!formik.touched.password ? '' : formik.errors.password}>
                                 <Input
                                     prefix={<LockOutlined className="site-form-item-icon"/>}
                                     type="password"
@@ -113,17 +101,17 @@ const RegisterForm = () => {
                             <Form.Item
                                 name="password-repeat"
                                 hasFeedback
-                                validateStatus={!formik.touched.repeatPassword ? '' : formik.errors.repeatPassword ? 'error' : 'success'}
-                                rules={[{required: true, message: 'Please input your Password!'}]}>
+                                validateStatus={validateField('password2', formik)}
+                                help={!formik.touched.password2 ? '' : formik.errors.password2}>
                                 <Input
                                     prefix={<LockOutlined className="site-form-item-icon"/>}
                                     type="password"
                                     size='large'
                                     placeholder="Repeat password"
-                                    name="repeatPassword"
+                                    name="password2"
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
-                                    value={formik.values.repeatPassword}/>
+                                    value={formik.values.password2}/>
                             </Form.Item>
 
                             <Form.Item>
@@ -155,5 +143,5 @@ type FormValues = {
     email: string
     username: string
     password: string
-    repeatPassword: string
+    password2: string
 }
