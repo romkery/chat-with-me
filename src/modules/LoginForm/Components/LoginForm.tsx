@@ -5,10 +5,8 @@ import {Link} from "react-router-dom";
 import Button from "../../../components/Button/Button";
 import Block from "../../../components/Block/Block";
 import "./../../../pages/Auth/Auth.scss"
-// @ts-ignore
-import validateForm from './../../../utils/helpers/validate'
-// @ts-ignore
-import validateField from './../../../utils/helpers/validateField'
+import validateForm from '../../../utils/helpers/validate'
+import validateField from '../../../utils/helpers/validateField'
 import {FormikErrors, useFormik} from "formik";
 
 const LoginForm = () => {

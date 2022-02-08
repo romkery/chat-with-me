@@ -6,9 +6,8 @@ import Button from "../../../components/Button/Button";
 import Block from "../../../components/Block/Block";
 import "./../../../pages/Auth/Auth.scss"
 import {FormikErrors, useFormik} from "formik";
-// @ts-ignore
-import validateForm from './../../../utils/helpers/validate'// @ts-ignore
-import validateField from './../../../utils/helpers/validateField'
+import validateForm from '../../../utils/helpers/validate'
+import validateField from '../../../utils/helpers/validateField'
 
 const RegisterForm = () => {
 

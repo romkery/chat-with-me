@@ -1,6 +1,7 @@
-const validateForm  = ({values, isAuth, errors}) => {
-    const rules = {
-        email: (value) => {
+const validateForm = ({values, isAuth, errors}: ValidatePropsType) => {
+
+    const rules: any = {
+        email: (value: string) => {
 
             if (!value) {
                 errors.email = 'E-mail is Required';
@@ -8,7 +9,7 @@ const validateForm  = ({values, isAuth, errors}) => {
                 errors.email = 'Invalid email address';
             }
         },
-        username: (value) => {
+        username: (value: string) => {
 
             if (!value) {
                 errors.username = 'Username is Required';
@@ -16,7 +17,7 @@ const validateForm  = ({values, isAuth, errors}) => {
                 errors.username = 'Invalid username'
             }
         },
-        password: (value) => {
+        password: (value: string) => {
 
             if (!value) {
                 errors.password = 'Password is Required';
@@ -24,7 +25,7 @@ const validateForm  = ({values, isAuth, errors}) => {
                 errors.password = isAuth ? 'Invalid password' : 'Too simple password'
             }
         },
-        password2: (value) => {
+        password2: (value: string) => {
 
             if (!value) {
                 errors.password2 = 'Password is Required';
@@ -40,3 +41,9 @@ const validateForm  = ({values, isAuth, errors}) => {
 }
 
 export default validateForm
+
+type ValidatePropsType = {
+    isAuth: boolean
+    values: any
+    errors: any
+}

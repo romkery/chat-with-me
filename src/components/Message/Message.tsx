@@ -6,27 +6,36 @@ import React, {FC} from 'react';
 import './Message.scss'
 import {formatDistanceToNow} from 'date-fns'
 import classNames from "classnames";
+import Time from "../Time/Time";
+import CheckIcon from "../CheckIcon/CheckIcon";
 
-const Message: FC<PropsType> = ({avatar, text, date, user, isMe, isChecked, attachments}) => {
+const Message: FC<PropsType> = ({avatar, text, date, user, isMe, isChecked, attachments, isTyping}) => {
 
     return (
-        <div className={classNames('message', {'message--isMe': isMe})}>
+        <div className={classNames('message', {
+            'message--isMe': isMe,
+            'message--is-typing': isTyping,
+            'message--image': attachments?.length === 1
+        })}>
             <div className="message__content">
-                {isMe && isChecked ?
-                    <img className='message__icon-checked' src={checkedSvg} alt="Checked icon"/>
-                    :
-                    <img className='message__icon-checked' src={noCheckedSvg} alt="noChecked icon"/>
-                }
+                <CheckIcon isChecked={isChecked} isMe={isMe}/>
                 <div className="message__avatar">
-                    <img src={avatar} alt={`User ${user.fullName}`}/>
+                    <img src={avatar} alt={`User ${user?.fullName}`}/>
                 </div>
                 <div className="message__info">
                     <div>
+                        {(text || isTyping) &&
                         <div className="message__bubble">
                             <div className="message__text">
-                                <p>{text}</p>
+                                {text && <p>{text}</p>}
                             </div>
+                            {isTyping && <div className="message__typing">
+                                <span/>
+                                <span/>
+                                <span/>
+                            </div>}
                         </div>
+                        }
                         <div className="message__attachments">
                             {attachments?.map(item =>
                                 <div className="message__attachments-item">
@@ -34,7 +43,7 @@ const Message: FC<PropsType> = ({avatar, text, date, user, isMe, isChecked, atta
                                 </div>
                             )}
                         </div>
-                        <span className="message__date">{formatDistanceToNow(date, {addSuffix: true})}</span>
+                        {date && <Time date={date}/>}
                     </div>
                 </div>
             </div>
@@ -46,9 +55,9 @@ export default Message;
 
 type PropsType = {
     avatar: string
-    text: string
-    date: number | Date
-    user: {
+    text?: string
+    date?: Date | number
+    user?: {
         fullName?: string
     }
     isMe?: boolean
@@ -57,4 +66,5 @@ type PropsType = {
         filename: string
         url: string
     }>
+    isTyping?: boolean
 }

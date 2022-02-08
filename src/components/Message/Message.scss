@@ -55,6 +55,7 @@
 
   &__attachments {
     display: flex;
+
     &-item {
       img {
         width: 45px;
@@ -102,4 +103,55 @@
       justify-content: flex-end;
     }
   }
+
+  &--is-typing {
+    #{$self}__bubble {
+      background-color: $message-typing-blue;
+    }
+  }
+
+  &--image {
+    #{$self}__attachments {
+      &-item {
+        img {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+  }
+
+  &__typing {
+    width: 45px;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 5px;
+
+    span {
+      height: 8px;
+      width: 8px;
+      background-color: #7786B2;
+      display: inline-block;
+      border-radius: 50%;
+      opacity: 0.4;
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          animation: 1s blink infinite ($i * .3333s);
+        }
+      }
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes bulge {
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
 }
