@@ -5,6 +5,7 @@ import checkedSvg from "../../assets/img/checked.svg";
 import noCheckedSvg from "../../assets/img/noChecked.svg";
 
 const CheckIcon = ({isMe, isChecked}: PropsType) => {
+    console.log(isMe)
     return (
         <>
             {isMe && isChecked ?

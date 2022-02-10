@@ -3,7 +3,7 @@ import React from "react";
 
 const Time = ({date, suffix}: PropsType) => {
     return <>
-        {formatDistanceToNow(date, {addSuffix: suffix})}
+            {formatDistanceToNow(date, {addSuffix: suffix})}
     </>
 }
 
