@@ -14,7 +14,7 @@ const validateForm = ({values, isAuth, errors}: ValidatePropsType) => {
             if (!value) {
                 errors.username = 'Username is Required';
             } else if (!/^[a-zA-Z0-9_-]{3,15}$/i.test(value)) {
-                errors.username = 'Invalid username'
+                errors.username = 'Invalid username';
             }
         },
         password: (value: string) => {
@@ -22,7 +22,7 @@ const validateForm = ({values, isAuth, errors}: ValidatePropsType) => {
             if (!value) {
                 errors.password = 'Password is Required';
             } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/i.test(value)) {
-                errors.password = isAuth ? 'Invalid password' : 'Too simple password'
+                errors.password = isAuth ? 'Invalid password' : 'Too simple password';
             }
         },
         password2: (value: string) => {
@@ -30,17 +30,17 @@ const validateForm = ({values, isAuth, errors}: ValidatePropsType) => {
             if (!value) {
                 errors.password2 = 'Password is Required';
             } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/i.test(value)) {
-                errors.password2 = isAuth ? 'Invalid password' : 'Too simple password'
+                errors.password2 = isAuth ? 'Invalid password' : 'Too simple password';
             }
         },
-    }
+    };
 
     Object.keys(values).forEach(
         key => rules[key] && rules[key](values[key])
-    )
-}
+    );
+};
 
-export default validateForm
+export default validateForm;
 
 type ValidatePropsType = {
     isAuth: boolean

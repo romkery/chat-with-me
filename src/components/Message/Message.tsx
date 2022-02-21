@@ -1,15 +1,14 @@
-import React, {FC, useEffect, useRef, useState} from 'react';
-import './Message.scss'
-import classNames from "classnames";
-import Time from "../Time/Time";
-import CheckIcon from "../CheckIcon/CheckIcon"; // @ts-ignore
-import waveSvg from '../../assets/img/wave.svg' // @ts-ignore
-import pauseSvg from '../../assets/img/pause.svg'// @ts-ignore
-import playSvg from '../../assets/img/play.svg'
-import convertCurrentTime from "../../utils/helpers/convertCurrentTime";
+import React, {FC, useEffect, useState} from 'react';
+import './Message.scss';
+import classNames from 'classnames';
+import Time from '../Time/Time';
+import CheckIcon from '../CheckIcon/CheckIcon';
+import convertCurrentTime from '../../utils/helpers/convertCurrentTime';
+import waveSvg from '../../assets/img/wave.svg';
+import pauseSvg from '../../assets/img/pause.svg';
+import playSvg from '../../assets/img/play.svg';
 
 const Message: FC<PropsType> = ({avatar, text, date, user, isMe, isChecked, attachments, isTyping, audio}) => {
-
 
         return (
             <div className={classNames('message', {
@@ -40,7 +39,7 @@ const Message: FC<PropsType> = ({avatar, text, date, user, isMe, isChecked, atta
                         {attachments &&
                         <div className="message__attachments">
                             {attachments.map(item =>
-                                <div className="message__attachments-item">
+                                <div className="message__attachments-item" key={item.filename}>
                                     <img src={item.url} alt={item.filename}/>
                                 </div>
                             )}
@@ -58,17 +57,17 @@ export default Message;
 
 const MessageAudio = ({audio}: any) => {
 
-    let [isPlaying, setIsPlaying] = useState(false)
+    const [isPlaying, setIsPlaying] = useState(false);
     const [audioElem] = useState(new Audio(audio));
     const [progress, setProgress] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
 
     const togglePlay = () => {
-        setIsPlaying(!isPlaying)
-    }
+        setIsPlaying(!isPlaying);
+    };
 
     useEffect(() => {
-        isPlaying ? audioElem.play() : audioElem.pause()
+        isPlaying ? audioElem.play() : audioElem.pause();
     }, [isPlaying]);
 
     useEffect(() => {
@@ -78,33 +77,34 @@ const MessageAudio = ({audio}: any) => {
 
             if (audioElem) {
                 audioElem.addEventListener('ended', () => {
-                    setIsPlaying(false)
-                    setProgress(0)
-                    setCurrentTime(0)//@ts-ignore
-                    document.querySelector('.message__audio-progress').style.transition = `0s`
-                }, false)
+                    setIsPlaying(false);
+                    setProgress(0);
+                    setCurrentTime(0);
+                    document.querySelector<HTMLElement>('.message__audio-progress')!.style.transition = '0s';
+                }, false);
             }
 
             if (audioElem) {
-                audioElem.addEventListener('playing', () => {//@ts-ignore
-                    document.querySelector('.message__audio-progress').style.transition = `${(audioElem.duration - audioElem.currentTime).toString()}s linear`
-                    setIsPlaying(true)
+                audioElem.addEventListener('playing', () => {
+                    document.querySelector<HTMLElement>('.message__audio-progress')!.style.transition =
+                        `${(audioElem.duration - audioElem.currentTime).toString()}s linear`;
+                    setIsPlaying(true);
                     if (!isPlaying) {
                         setInterval(() => {
-                            setCurrentTime(audioElem.duration - audioElem.currentTime)
-                        }, 999)
+                            setCurrentTime(audioElem.duration - audioElem.currentTime);
+                        }, 999);
                     }
-                    setProgress(100)
-                }, false)
+                    setProgress(100);
+                }, false);
             }
             if (audioElem) {
                 audioElem.addEventListener('pause', () => {
-                    setIsPlaying(false)
-                    setProgress((audioElem.currentTime / audioElem.duration) * 100)
-                }, false)
+                    setIsPlaying(false);
+                    setProgress((audioElem.currentTime / audioElem.duration) * 100);
+                }, false);
             }
         }, []
-    )
+    );
 
     return <>
         <div className="message__audio">
@@ -125,8 +125,8 @@ const MessageAudio = ({audio}: any) => {
                 </span>
             </div>
         </div>
-    </>
-}
+    </>;
+};
 
 type PropsType = {
     audio?: any

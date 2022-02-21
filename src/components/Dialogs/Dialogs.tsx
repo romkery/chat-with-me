@@ -1,6 +1,6 @@
-import React, {FC} from "react";
-import './Dialogs.scss'
-import DialogItem from "../DialogItem/DialogItem";
+import React, {FC} from 'react';
+import './Dialogs.scss';
+import DialogItem from './DialogItem/DialogItem';
 import orderBy from 'lodash/orderBy';
 
 const Dialogs: FC<PropsType> = ({items}) => {
@@ -13,10 +13,10 @@ const Dialogs: FC<PropsType> = ({items}) => {
                 />
             )}
         </div>
-    )
-}
+    );
+};
 
-export default Dialogs
+export default Dialogs;
 
 type ItemsType = {
     _id: number,

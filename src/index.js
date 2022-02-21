@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.scss';
-import ChatApp from "./App";
+import ChatApp from './App';
 
 ReactDOM.render(
   <React.StrictMode>

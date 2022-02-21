@@ -1,13 +1,13 @@
 import React from 'react';
-import {Form, Input} from "antd";
-import {LockOutlined, UserOutlined} from "@ant-design/icons";
-import {Link} from "react-router-dom";
-import Button from "../../../components/Button/Button";
-import Block from "../../../components/Block/Block";
-import "./../../../pages/Auth/Auth.scss"
-import validateForm from '../../../utils/helpers/validate'
-import validateField from '../../../utils/helpers/validateField'
-import {FormikErrors, useFormik} from "formik";
+import {Form, Input} from 'antd';
+import {LockOutlined, UserOutlined} from '@ant-design/icons';
+import {Link} from 'react-router-dom';
+import Button from '../../../components/Button/Button';
+import Block from '../../../components/Block/Block';
+import './../../../pages/Auth/Auth.scss';
+import validateForm from '../../../utils/helpers/validate';
+import validateField from '../../../utils/helpers/validateField';
+import {FormikErrors, useFormik} from 'formik';
 
 const LoginForm = () => {
 
@@ -19,8 +19,8 @@ const LoginForm = () => {
         validateOnChange: true,
         validate: (values: FormValues) => {
 
-            let errors: FormikErrors<FormValues> = {}
-            validateForm({isAuth: true, values, errors})
+            const errors: FormikErrors<FormValues> = {};
+            validateForm({isAuth: true, values, errors});
 
             return errors;
         },

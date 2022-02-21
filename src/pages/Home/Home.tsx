@@ -1,83 +1,114 @@
-import React from "react";
-import "./Home.scss"
-import Dialogs from "../../components/Dialogs/Dialogs";
-import Message from "../../components/Message/Message";
+import React from 'react';
+import './Home.scss';
+import {EllipsisOutlined, FormOutlined, TeamOutlined} from '@ant-design/icons';
+import {Input} from 'antd';
+import Dialogs from '../../components/Dialogs/Dialogs';
+import './../../styles/layouts/_chat.scss';
 
-const audio = require('./../../assets/fingerlicking-message-tone.mp3')
+const audio = require('../../assets/fingerlicking-message-tone.mp3');
 
 const Home = () => {
 
-    const date = new Date()
+    const {Search} = Input;
+    const date = new Date();
+    const onSearch = ({value}: any) => console.log(value);
 
     return (
         <>
             <div className='home'>
-                <div className="dialogs">
-                    <Dialogs items={[
-                        {
-                            _id: Math.random(),
-                            user: {
-                                _id: 1,
-                                fullName: 'Classic RD',
-                                avatar: 'https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1',
-                                isOnline: true
-                            },
-                            message: {
-                                userId: 1,
-                                text: 'И потеряется этот мир в ядерном грибе...',
-                                isRead: false,
-                                created_at: new Date(2022, 1, 8)
-                            },
-                            isMe: true,
-                            isChecked: false,
-                        },
-                        {
-                            _id: Math.random(),
-                            user: {
-                                _id: 2,
-                                fullName: 'WEB DESIGNER',
-                                avatar: 'https://sun9-66.userapi.com/impg/sqHlpqAaiaY6QVdq4wbWB7mUsqYZ5FBe67RU5Q/vwIEddRFhP4.jpg?size=719x1280&quality=95&sign=12f558f991f3997d141f9e72cd0f0cc8&type=album',
-                                isOnline: false
-                            },
-                            message: {
-                                userId: 2,
-                                text: 'будет тебе все переводить',
-                                isRead: true,
-                                created_at: new Date(2022, 1, 7)
-                            },
-                            isMe: true,
-                            isChecked: true,
-                        },
-                        {
-                            _id: Math.random(),
-                            user: {
-                                _id: 2,
-                                fullName: 'PURPLE BRO',
-                                // avatar: 'https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1',
-                                isOnline: true
-                            },
-                            message: {
-                                userId: 3,
-                                text: 'прикинь новый 54 на пневмеприкинь новый 54 на пневме',
-                                isRead: false,
-                                count: 1,
-                                created_at: new Date()
-                            },
-                        }]}/>
+                <div className="chat">
+                    <div className="chat__sidebar">
+                        <div className="chat__sidebar-header">
+                            <div>
+                                <TeamOutlined/>
+                                <span>Dialogs list</span>
+                            </div>
+                            <FormOutlined/>
+                        </div>
+                        <div className="chat__sidebar-search">
+                            <Search placeholder="Search among contacts" allowClear onPressEnter={onSearch} enterButton
+                                    size='large'/>
+                        </div>
+                        <div className="chat__sidebar-dialogs">
+                            <Dialogs items={[
+                                {
+                                    _id: Math.random(),
+                                    user: {
+                                        _id: 1,
+                                        fullName: 'Classic RD',
+                                        avatar: 'https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1',
+                                        isOnline: true
+                                    },
+                                    message: {
+                                        userId: 1,
+                                        text: 'И потеряется этот мир в ядерном грибе...',
+                                        isRead: false,
+                                        created_at: new Date(2022, 1, 8)
+                                    },
+                                    isMe: true,
+                                    isChecked: false,
+                                },
+                                {
+                                    _id: Math.random(),
+                                    user: {
+                                        _id: 2,
+                                        fullName: 'WEB DESIGNER',
+                                        avatar: 'https://sun9-66.userapi.com/impg/sqHlpqAaiaY6QVdq4wbWB7mUsqYZ5FBe67RU5Q/vwIEddRFhP4.jpg?size=719x1280&quality=95&sign=12f558f991f3997d141f9e72cd0f0cc8&type=album',
+                                        isOnline: false
+                                    },
+                                    message: {
+                                        userId: 2,
+                                        text: 'будет тебе все переводить',
+                                        isRead: true,
+                                        created_at: new Date(2022, 1, 7)
+                                    },
+                                    isMe: true,
+                                    isChecked: true,
+                                },
+                                {
+                                    _id: Math.random(),
+                                    user: {
+                                        _id: 2,
+                                        fullName: 'PURPLE BRO',
+                                        // avatar: 'https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1',
+                                        isOnline: true
+                                    },
+                                    message: {
+                                        userId: 3,
+                                        text: 'прикинь новый 54 на пневмеприкинь новый 54 на пневме',
+                                        isRead: false,
+                                        count: 1,
+                                        created_at: new Date()
+                                    },
+                                }]}/>
+                        </div>
+                    </div>
+                    <div className="chat__dialog">
+                        <div className="chat__dialog-header">
+                            <div className="chat__dialog-header-center">
+                                <b className="chat__dialog-header-username">Роман Дмитриев
+                                    <div className="chat__dialog-header-status">
+                                        <div className="status status-online">Онлайн</div>
+                                        <EllipsisOutlined/>
+                                    </div>
+                                </b>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <Message
-                    avatar='https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1'
-                    text='Привет, как дела у бродяги-недосимпотяги?'
-                    date={date}
-                    user={{fullName: 'Roman Dmitriev'}}
-                    isMe={true}
-                    isChecked={true}
-                />
-                <Message
-                    avatar='https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1'
-                    audio={audio}
-                    date={date}
-                />
+                {/*<Message*/}
+                {/*    avatar='https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1'*/}
+                {/*    text='Привет, как дела у бродяги-недосимпотяги?'*/}
+                {/*    date={date}*/}
+                {/*    user={{fullName: 'Roman Dmitriev'}}*/}
+                {/*    isMe={true}*/}
+                {/*    isChecked={true}*/}
+                {/*/>*/}
+                {/*<Message*/}
+                {/*    avatar='https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1'*/}
+                {/*    audio={audio}*/}
+                {/*    date={date}*/}
+                {/*/>*/}
                 {/*                <Message*/}
                 {/*                    avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'*/}
                 {/*                    text='Друг мой, друг мой,*/}
@@ -114,7 +145,7 @@ const Home = () => {
                 {/*                />*/}
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;

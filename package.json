@@ -13,6 +13,7 @@
     "antd": "^4.18.5",
     "classnames": "^2.3.1",
     "date-fns": "^2.28.0",
+    "eslint-plugin-react": "^7.28.0",
     "formik": "^2.2.9",
     "history": "^5.2.0",
     "lodash": "^4.17.21",
@@ -28,11 +29,12 @@
     "redux-form": "^8.3.7",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "typescript": "^4.5.3",
+    "typescript": "^4.5.5",
     "web-vitals": "^2.1.4",
     "webpack": "^5.68.0"
   },
   "scripts": {
+    "lint": ".eslintrc.js --fix --ext .js,.jsx .",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -57,7 +59,10 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
     "compose": "^0.1.2",
+    "eslint": "^8.9.0",
     "react-compose": "^2.0.0"
   }
 }

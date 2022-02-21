@@ -1,11 +1,9 @@
-import React from "react";
-// @ts-ignore
-import checkedSvg from "../../assets/img/checked.svg";
-// @ts-ignore
-import noCheckedSvg from "../../assets/img/noChecked.svg";
+import React from 'react';
+import checkedSvg from '../../assets/img/checked.svg';
+import noCheckedSvg from '../../assets/img/noChecked.svg';
 
 const CheckIcon = ({isMe, isChecked}: PropsType) => {
-    console.log(isMe)
+
     return (
         <>
             {isMe && isChecked ?
@@ -14,8 +12,8 @@ const CheckIcon = ({isMe, isChecked}: PropsType) => {
                 <img className='message__icon-checked' src={noCheckedSvg} alt="noChecked icon"/>
             }
         </>
-    )
-}
+    );
+};
 
 export default CheckIcon;
 

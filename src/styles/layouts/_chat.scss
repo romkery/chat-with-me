@@ -1,0 +1,41 @@
+@import 'src/styles/variables';
+
+.chat {
+  display: flex;
+  background-color: $chat-bg;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-shadow: 0 0 23px rgba(0, 0, 0, 0.04);
+
+  &__sidebar {
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      align-items: center;
+
+      div {
+        display: inline-block;
+
+        span {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    &-search {
+      padding: 0 20px 20px 20px;
+      width: 100%;
+
+      .ant-input-affix-wrapper, input {
+        padding: 7.5px 11px;
+        background-color: $input-bg;
+        border: 0;
+      }
+    }
+  }
+
+  &__dialog {
+    flex: 1
+  }
+}

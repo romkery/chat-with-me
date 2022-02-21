@@ -14,4 +14,4 @@ export const AvatarColors = [
     '#0000CD',
     '#708090',
     '#D2691E',
-]
+];

@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
-import {Form, Input} from "antd";
-import {InfoCircleTwoTone, LockOutlined, MailOutlined, UserOutlined} from "@ant-design/icons";
-import {Link, Router} from "react-router-dom";
-import Button from "../../../components/Button/Button";
-import Block from "../../../components/Block/Block";
-import "./../../../pages/Auth/Auth.scss"
-import {FormikErrors, useFormik} from "formik";
-import validateForm from '../../../utils/helpers/validate'
-import validateField from '../../../utils/helpers/validateField'
+import {Form, Input} from 'antd';
+import {InfoCircleTwoTone, LockOutlined, MailOutlined, UserOutlined} from '@ant-design/icons';
+import {Link, Router} from 'react-router-dom';
+import Button from '../../../components/Button/Button';
+import Block from '../../../components/Block/Block';
+import './../../../pages/Auth/Auth.scss';
+import {FormikErrors, useFormik} from 'formik';
+import validateForm from '../../../utils/helpers/validate';
+import validateField from '../../../utils/helpers/validateField';
 
 const RegisterForm = () => {
 
-    const [success, setSuccess] = useState(true)
+    const [success, setSuccess] = useState(true);
 
     const formik = useFormik({
         initialValues: {
@@ -25,8 +25,8 @@ const RegisterForm = () => {
 
         validate: (values: FormValues) => {
 
-            let errors: FormikErrors<FormValues> = {}
-            validateForm({isAuth: false, values, errors})
+            const errors: FormikErrors<FormValues> = {};
+            validateForm({isAuth: false, values, errors});
 
             return errors;
         },
