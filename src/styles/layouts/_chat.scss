@@ -1,4 +1,9 @@
 @import 'src/styles/variables';
+@import 'src/styles/adaptive';
+
+.home {
+  width: 100%;
+}
 
 .chat {
   display: flex;
@@ -8,34 +13,157 @@
   box-shadow: 0 0 23px rgba(0, 0, 0, 0.04);
 
   &__sidebar {
-    &-header {
+    border-right: $border;
+    width: 420px;
+
+    &-search {
       display: flex;
-      justify-content: space-between;
-      padding: 20px;
+      flex-direction: row;
       align-items: center;
+      justify-content: flex-start;
+      padding: 5px 18px 5px 19.5px;
+      width: 100%;
 
-      div {
-        display: inline-block;
+      .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+        border-radius: 0 12px 12px 0;
+      }
 
-        span {
-          margin-right: 5px;
+      .ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+      }
+
+      &-img {
+        height: 100%;
+        padding: 7.5px;
+        margin-right: 20px;
+
+        &:hover {
+          background-color: $default-hover;
+          border-radius: $border-radius;
+        }
+      }
+
+      button {
+        border-radius: $border-radius;
+      }
+
+      .ant-input-wrapper .ant-input-group, input {
+        border: 0;
+      }
+    }
+
+    &-groups {
+      height: 46px;
+      width: 100%;
+      padding-left: 19.5px;
+      overflow: scroll;
+      border-bottom: $border;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &-wrap {
+        display: inline-flex;
+
+        .group-item {
+          display: flex;
+          align-items: center;
+          padding: 11px 10px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $default-hover;
+            border-radius: $border-radius;
+          }
+
+          &:first-child {
+            padding: 10px 7.5px 10px 7.5px;
+          }
+
+          span {
+            line-height: $line-height;
+            font-weight: 500;
+          }
         }
       }
     }
 
-    &-search {
-      padding: 0 20px 20px 20px;
-      width: 100%;
+    &-dialogs {
+      overflow-y: scroll;
+      height: calc(100vh - 96px);
+      padding-left: 6px;
 
-      .ant-input-affix-wrapper, input {
-        padding: 7.5px 11px;
-        background-color: $input-bg;
-        border: 0;
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #ffffff;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $scrollbar;
+        border-radius: 10px;
+        border: 0px solid #ffffff;
       }
     }
   }
 
   &__dialog {
-    flex: 1
+    min-width: 420px;
+    flex: 1;
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      border-bottom: $border;
+      height: 50px;
+
+      &-center {
+        display: flex;
+        align-items: center;
+      }
+
+      img {
+        width: 38px;
+        height: 38px;
+        border-radius: 30px;
+        margin: 0 10px 0 0
+      }
+
+      span {
+        display: flex;
+        width: 35px;
+        height: 35px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: $time;
+        border-radius: 20px;
+
+        &:hover {
+          background-color: $default-hover;
+        }
+      }
+    }
+
+    .chat__dialog-messages-wrap {
+      overflow-y: scroll;
+      height: calc(100vh - 50px);
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .chat__dialog-messages {
+        max-width: 728px;
+        padding: 0 20px 20px 20px;
+        margin: 0 auto;
+      }
+    }
   }
 }

@@ -1,6 +1,4 @@
 import './styles/App.scss';
-import {Provider} from 'react-redux';
-import store from './redux/redux-store';
 import {BrowserRouter as Router, useRoutes} from 'react-router-dom';
 import {compose} from 'redux';
 import 'antd/dist/antd.css';
@@ -28,9 +26,7 @@ const AppContainer = compose(
 
 const ChatApp = (props) => {
     return <Router>
-        <Provider store={store}>
-            <AppContainer/>
-        </Provider>
+        <AppContainer/>
     </Router>;
 };
 

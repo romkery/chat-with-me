@@ -6,7 +6,7 @@ const CheckIcon = ({isMe, isChecked}: PropsType) => {
 
     return (
         <>
-            {isMe && isChecked ?
+            {isMe !== undefined && isChecked ?
                 <img className='message__icon-checked' src={checkedSvg} alt="Checked icon"/>
                 :
                 <img className='message__icon-checked' src={noCheckedSvg} alt="noChecked icon"/>

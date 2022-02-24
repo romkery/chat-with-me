@@ -1,7 +1,6 @@
 import React, {FC, useEffect, useState} from 'react';
 import './Message.scss';
 import classNames from 'classnames';
-import Time from '../Time/Time';
 import CheckIcon from '../CheckIcon/CheckIcon';
 import convertCurrentTime from '../../utils/helpers/convertCurrentTime';
 import waveSvg from '../../assets/img/wave.svg';
@@ -9,7 +8,7 @@ import pauseSvg from '../../assets/img/pause.svg';
 import playSvg from '../../assets/img/play.svg';
 
 const Message: FC<PropsType> = ({avatar, text, date, user, isMe, isChecked, attachments, isTyping, audio}) => {
-
+        console.log(isMe);
         return (
             <div className={classNames('message', {
                 'message--isMe': isMe,
@@ -18,34 +17,37 @@ const Message: FC<PropsType> = ({avatar, text, date, user, isMe, isChecked, atta
                 'message--image': attachments?.length === 1,
             })}>
                 <div className="message__content">
-                    <CheckIcon isChecked={isChecked} isMe={isMe}/>
-                    <div className="message__avatar">
-                        <img src={avatar} alt={`User ${user?.fullName}`}/>
-                    </div>
+                    {/*<div className="message__avatar">*/}
+                    {/*    <img src={avatar} alt={`User ${user?.fullName}`}/>*/}
+                    {/*</div>*/}
                     <div className="message__info">
                         {(audio || text || isTyping) &&
                         <div className="message__bubble">
                             <div className="message__text">
                                 {text && <p>{text}</p>}
                             </div>
+                            {audio && <MessageAudio audio={audio}/>}
                             {isTyping && <div className="message__typing">
                                 <span/>
                                 <span/>
                                 <span/>
                             </div>}
-                            {audio && <MessageAudio audio={audio}/>}
+                            <div className="message__time">
+                                <span className={'message__date'}>{date.getHours() + ':' + date.getMinutes()}</span>
+                                {isMe &&
+                                <CheckIcon isChecked={isChecked} isMe={isMe}/>}
+                            </div>
                         </div>
                         }
                         {attachments &&
                         <div className="message__attachments">
                             {attachments.map(item =>
-                                <div className="message__attachments-item" key={item.filename}>
+                                <div className="message__attachments-item" key={item.url}>
                                     <img src={item.url} alt={item.filename}/>
                                 </div>
                             )}
                         </div>
                         }
-                        <span className={'message__date'}>{date && <Time date={date}/>}</span>
                     </div>
                 </div>
             </div>
@@ -120,10 +122,10 @@ const MessageAudio = ({audio}: any) => {
                 <div className="message__audio-wave">
                     <img src={waveSvg} alt="wave svg"/>
                 </div>
-                <span className="message__audio-duration">
+            </div>
+            <span className="message__audio-duration">
                     {convertCurrentTime(currentTime)}
                 </span>
-            </div>
         </div>
     </>;
 };
@@ -132,7 +134,7 @@ type PropsType = {
     audio?: any
     avatar: string
     text?: string
-    date?: Date | number
+    date: Date
     user?: {
         fullName?: string
     }

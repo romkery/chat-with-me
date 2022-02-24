@@ -58,6 +58,7 @@ const DialogItem: FC<PropsType> = ({user, message, isChecked, isMe}) => {
                         {message.text}
                     </p>
                     {isMe ? <CheckIcon isChecked={isChecked} isMe={isMe}/> :
+                        message.isRead &&
                         <div className="dialogs__item-count">
                             <span>{message.count}</span>
                         </div>

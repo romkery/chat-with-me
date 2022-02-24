@@ -1,0 +1,15 @@
+@media (max-width: 570px) {
+  .chat__dialog {
+    display: none;
+  }
+
+  .chat__sidebar {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .chat__sidebar {
+    min-width: 280px;
+  }
+}

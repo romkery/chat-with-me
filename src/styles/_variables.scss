@@ -1,5 +1,5 @@
-$blue: #1ee6e6;
-$black: #202020;
+$bubble: #202020;
+$accent-color: #1ee6e6;
 $message-typing-blue: #E5EDFF;
 $green: #0ac630;
 $light-black: #2f2f2f;
@@ -8,3 +8,26 @@ $grey: #707070;
 $body-bg: #F4f7fd;
 $chat-bg: #FFFFFF;
 $input-bg: #f7f8f9;
+$default-hover: rgba(0, 0, 0, .06);
+$message_text: #FFFFFF;
+$status-color: #D4D4D4;
+$time: 0.2s;
+$border: 1px solid rgba(0, 0, 0, .1);
+$border-radius: 12px;
+$line-height: 1.3125;
+$border-online: #FFFFFF;
+$scrollbar: #c1c0c1;
+
+$span-style: (
+        display: flex,
+        width: 35px,
+        height: 35px,
+        align-items: center,
+        justify-content: center,
+        cursor: pointer,
+        transition: $time,
+        border-radius: 20px,
+        &:hover (
+                background-color: $default-hover,
+        )
+)
