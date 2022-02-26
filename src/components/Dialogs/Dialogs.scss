@@ -30,7 +30,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #FFFFFF;
+      color: $default-font-color;
       font-size: 22px;
     }
 
@@ -42,7 +42,7 @@
           content: '';
           bottom: 2px;
           right: 2px;
-          border: 2px solid $border-online;
+          border: 2px solid $chat-bg;
           background-color: $green;
           border-radius: 20px;
           width: 12px;
@@ -63,9 +63,9 @@
         display: flex;
 
         b {
+          color: $default-font-color;
           font-weight: 500;
           font-size: 14px;
-          flex: 1;
           margin-bottom: 2px;
         }
 
@@ -81,7 +81,7 @@
 
         p {
           margin: 0;
-          opacity: 0.4;
+          color: $secondary-font-color;
           max-width: 570px;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -92,7 +92,7 @@
 
     &-count {
       background: $accent-color;
-      color: #FFFFFF;
+      color: $font-count-color;
       font-weight: 500;
       min-width: 18px;
       height: 18px;
@@ -104,7 +104,7 @@
 
     &.active,
     &:hover {
-      background-color: $default-hover;
+      background-color: $hover-color;
     }
   }
 }

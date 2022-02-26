@@ -1,0 +1,25 @@
+:root {
+  --background-color: #F4f7fd;
+  --chat-background: #FFFFFF;
+  --border-color: #d9d9d9;
+  --scroll-thumb-color: #c1c0c1;
+  --scroll-bg-color: #FFFFFF;
+  --default-font-color: #000000;
+  --secondary-font-color: #aaaaaa;
+  --input-search-background-color: #FFFFFF;
+  --input-search-button-color: #1890ff;
+  --input-search-border-color: #d9d9d9;
+  --hover-color: rgba(0, 0, 0, .05);
+}
+
+:root .dark {
+  --background-color: #000000;
+  --chat-background: #212121;
+  --border-color: #000000;
+  --scroll-thumb-color: #4d4d4d;
+  --scroll-bg-color: #212121;
+  --default-font-color: #FFFFFF;
+  --input-search-background-color: #181818;
+  --input-search-border-color: #4d4d4d;
+  --hover-color: #4d4d4d;
+}

@@ -3,9 +3,9 @@ import './Message.scss';
 import classNames from 'classnames';
 import CheckIcon from '../CheckIcon/CheckIcon';
 import convertCurrentTime from '../../utils/helpers/convertCurrentTime';
-import waveSvg from '../../assets/img/wave.svg';
 import pauseSvg from '../../assets/img/pause.svg';
 import playSvg from '../../assets/img/play.svg';
+import WaveSvg from '../../assets/img/wave';
 
 const Message: FC<PropsType> = ({avatar, text, date, user, isMe, isChecked, attachments, isTyping, audio}) => {
         console.log(isMe);
@@ -120,7 +120,7 @@ const MessageAudio = ({audio}: any) => {
                     </button>
                 </div>
                 <div className="message__audio-wave">
-                    <img src={waveSvg} alt="wave svg"/>
+                    <WaveSvg/>
                 </div>
             </div>
             <span className="message__audio-duration">

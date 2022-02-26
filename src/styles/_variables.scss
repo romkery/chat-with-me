@@ -1,3 +1,5 @@
+@import './colors';
+
 $bubble: #202020;
 $accent-color: #1ee6e6;
 $message-typing-blue: #E5EDFF;
@@ -5,29 +7,45 @@ $green: #0ac630;
 $light-black: #2f2f2f;
 $light-black-btn: #474747;
 $grey: #707070;
-$body-bg: #F4f7fd;
-$chat-bg: #FFFFFF;
-$input-bg: #f7f8f9;
-$default-hover: rgba(0, 0, 0, .06);
-$message_text: #FFFFFF;
+$body-bg: var(--background-color);
+$chat-bg: var(--chat-background);
+$scroll-thumb-color: var(--scroll-thumb-color);
+$scroll-bg-color: var(--scroll-bg-color);
+$input-bg-color: #f7f8f9;
+$default-font-color: var(--default-font-color);
+$secondary-font-color: var(--secondary-font-color);
+$hover-color: var(--hover-color);
 $status-color: #D4D4D4;
 $time: 0.2s;
-$border: 1px solid rgba(0, 0, 0, .1);
+$border: 1px solid var(--border-color);
+$border-input-search: 1px solid var(--input-search-border-color);
 $border-radius: 12px;
 $line-height: 1.3125;
 $border-online: #FFFFFF;
-$scrollbar: #c1c0c1;
+$font-me-color: #FFFFFF;
+$font-count-color: #FFFFFF;
+$input-search-background-color: var(--input-search-background-color);
+$input-search-button-color: var(--input-search-button-color);
 
-$span-style: (
-        display: flex,
-        width: 35px,
-        height: 35px,
-        align-items: center,
-        justify-content: center,
-        cursor: pointer,
-        transition: $time,
-        border-radius: 20px,
-        &:hover (
-                background-color: $default-hover,
-        )
-)
+%hover {
+  background: $hover-color;
+  transition: $time;
+}
+
+%span-icon {
+  display: flex;
+  cursor: pointer;
+  width: 35px !important;
+  height: 30px !important;
+  align-items: center;
+  justify-content: center;
+  transition: $time;
+  border-radius: 20px;
+  margin: 0 6px;
+}
+
+%icon-size {
+  width: 22px;
+  height: 22px;
+}
+

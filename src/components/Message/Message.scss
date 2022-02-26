@@ -26,25 +26,23 @@
 
   &__bubble {
     display: inline-flex;
-    background: $bubble;
-    color: #FFFFFF;
+    background: $chat-bg;
     box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.06);
     border-radius: 12px 12px 12px 0;
-    padding: 0.2rem 0.5rem 0.2rem 0.625rem;
+    padding: 3rem 6rem 3rem 7rem;
     margin-bottom: 6px;
-    border: 1px solid #ececec;
   }
 
   &__date {
     line-height: 15px;
     display: block;
     font-size: 10px;
+    color: $default-font-color;
     opacity: 0.4;
   }
 
   &__text {
-    color: $message_text;
-    line-height: 22px;
+    color: $default-font-color;
 
     p {
       margin-bottom: 0;
@@ -57,9 +55,6 @@
     justify-content: right;
     margin-top: 10px;
     margin-left: 5px;
-
-    &__icon-checked {
-    }
   }
 
   &__info {
@@ -134,25 +129,26 @@
 
       }
 
+
       &-wave {
-        margin-top: 5px;
         width: 200px;
         height: 18px;
         overflow: hidden;
+        margin-top: 5px;
 
-        img {
-          width: 180px;
-          height: 20px;
-          object-fit: cover;
-          margin-left: 15px;
+
+        svg {
+          width: 100%;
+          fill: $default-font-color;
         }
       }
 
       &-duration {
         position: absolute;
+        color: $default-font-color;
         font-weight: 500;
         opacity: 0.6;
-        font-size: 12px;
+        font-size: 0.2rem;
         left: 60px;
         bottom: 0;
       }
@@ -178,7 +174,7 @@
       border-radius: 12px 12px 0 12px;
 
       #{$self}__text {
-        color: #FFFFFF;
+        color: $font-me-color;
       }
     }
 
@@ -194,6 +190,7 @@
       opacity: .8;
       display: flex;
       justify-content: flex-end;
+      color: $font-me-color;
     }
   }
 

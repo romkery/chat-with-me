@@ -1,0 +1,111 @@
+@import 'src/styles/variables';
+
+.chat__sidebar {
+  border-right: $border;
+  width: 420px;
+
+  &-search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 18px 5px 19.5px;
+    width: 100%;
+
+    .ant-input-affix-wrapper {
+      border: $border-input-search;
+      border-radius: $border-radius;
+    }
+
+    .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+      border-radius: 0 12px 12px 0;
+      background: $input-search-background-color;
+    }
+
+    .ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+    }
+
+    &-img {
+      height: 100%;
+      padding: 7.5px;
+      margin-right: 17px;
+
+      svg {
+        color: $default-font-color;
+      }
+
+      &:hover {
+        background-color: $hover-color;
+        border-radius: $border-radius;
+      }
+    }
+
+    button {
+      border-radius: $border-radius;
+    }
+
+    .ant-input-wrapper .ant-input-group, input {
+      border: 0;
+    }
+  }
+
+  &-groups {
+    height: 46px;
+    width: 100%;
+    padding-left: 19.5px;
+    overflow: scroll;
+    border-bottom: $border;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &-wrap {
+      display: inline-flex;
+
+      .group-item {
+        display: flex;
+        align-items: center;
+        padding: 11px 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $hover-color;
+          border-radius: $border-radius;
+        }
+
+        &:first-child {
+          padding: 10px 7.5px 10px 7.5px;
+        }
+
+        span {
+          color: $secondary-font-color;
+          line-height: $line-height;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  &-dialogs {
+    overflow-y: scroll;
+    height: calc(100vh - 96px);
+    padding-left: 6px;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $scroll-bg-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $scroll-thumb-color;
+      border-radius: 10px;
+    }
+  }
+
+}

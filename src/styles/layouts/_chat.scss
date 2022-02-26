@@ -1,5 +1,6 @@
 @import 'src/styles/variables';
 @import 'src/styles/adaptive';
+@import 'src/styles/colors';
 
 .home {
   width: 100%;
@@ -7,109 +8,10 @@
 
 .chat {
   display: flex;
-  background-color: $chat-bg;
   max-width: 1440px;
   margin: 0 auto;
+  background: $chat-bg;
   box-shadow: 0 0 23px rgba(0, 0, 0, 0.04);
-
-  &__sidebar {
-    border-right: $border;
-    width: 420px;
-
-    &-search {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 5px 18px 5px 19.5px;
-      width: 100%;
-
-      .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
-        border-radius: 0 12px 12px 0;
-      }
-
-      .ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
-        border-top-left-radius: 12px;
-        border-bottom-left-radius: 12px;
-      }
-
-      &-img {
-        height: 100%;
-        padding: 7.5px;
-        margin-right: 20px;
-
-        &:hover {
-          background-color: $default-hover;
-          border-radius: $border-radius;
-        }
-      }
-
-      button {
-        border-radius: $border-radius;
-      }
-
-      .ant-input-wrapper .ant-input-group, input {
-        border: 0;
-      }
-    }
-
-    &-groups {
-      height: 46px;
-      width: 100%;
-      padding-left: 19.5px;
-      overflow: scroll;
-      border-bottom: $border;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-
-      &-wrap {
-        display: inline-flex;
-
-        .group-item {
-          display: flex;
-          align-items: center;
-          padding: 11px 10px;
-          cursor: pointer;
-
-          &:hover {
-            background-color: $default-hover;
-            border-radius: $border-radius;
-          }
-
-          &:first-child {
-            padding: 10px 7.5px 10px 7.5px;
-          }
-
-          span {
-            line-height: $line-height;
-            font-weight: 500;
-          }
-        }
-      }
-    }
-
-    &-dialogs {
-      overflow-y: scroll;
-      height: calc(100vh - 96px);
-      padding-left: 6px;
-
-      &::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      &::-webkit-scrollbar-track {
-        background: #ffffff;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: $scrollbar;
-        border-radius: 10px;
-        border: 0px solid #ffffff;
-      }
-    }
-  }
 
   &__dialog {
     min-width: 420px;
@@ -128,13 +30,21 @@
         align-items: center;
       }
 
+      b {
+        color: $default-font-color
+      }
+
       img {
         width: 38px;
         height: 38px;
         border-radius: 30px;
-        margin: 0 10px 0 0
+        margin: 0 10px 0 0;
       }
 
+      svg {
+        color: $default-font-color;
+      }
+      
       span {
         display: flex;
         width: 35px;
@@ -146,14 +56,16 @@
         border-radius: 20px;
 
         &:hover {
-          background-color: $default-hover;
+          background-color: $hover-color;
         }
       }
     }
 
-    .chat__dialog-messages-wrap {
+    &-messages-wrap {
       overflow-y: scroll;
       height: calc(100vh - 50px);
+      background: url("../../assets/img/userBg.jpeg") no-repeat;
+      background-size: cover;
 
       &::-webkit-scrollbar {
         display: none;
@@ -167,3 +79,34 @@
     }
   }
 }
+
+.ant-input-group-addon {
+  transition: 0s;
+  background: $input-search-background-color !important;
+
+  button {
+    background: $input-search-button-color !important;
+  }
+}
+
+.ant-input-affix-wrapper, .ant-input-affix-wrapper-lg {
+  border: 0;
+  height: 100%;
+  background: $chat-bg;
+  transition: 0s;
+}
+
+.ant-input-affix-wrapper-focused,
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+  border-color: #d9d9d9 !important;
+  box-shadow: none;
+  background: $chat-bg;
+  transition: 0s;
+}
+
+.ant-input {
+  background: $chat-bg;
+  transition: all 0s;
+}
+
+
