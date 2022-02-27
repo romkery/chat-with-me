@@ -1,0 +1,71 @@
+@import './src/styles/variables';
+
+.ant-dropdown-menu {
+  width: 320px;
+  padding: 0;
+  top: 25px;
+  left: -50px;
+  border-radius: $border-radius;
+  background-color: $dropdown-menu-color !important;
+
+  .ant-dropdown-menu-item {
+    color: $default-font-color;
+    padding: 10px 10px;
+    transition: 0s;
+
+    .ant-dropdown-menu-title-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    p {
+      width: 230px;
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    &:last-child {
+      p {
+        width: 120px;
+      }
+    }
+
+    svg {
+      position: relative;
+      font-size: 20px;
+    }
+
+    &:hover {
+      @extend %hover;
+      border-radius: $border-radius;;
+    }
+
+    .ant-switch {
+      background-color: $switch-color;
+
+      &:focus {
+        box-shadow: unset;
+      }
+    }
+
+    .ant-switch-checked {
+      background-color: $accent-color;
+    }
+
+    .ant-switch-handle {
+
+      &::before {
+        background-color: $dropdown-menu-color;
+      }
+    }
+  }
+}
+
+.menu-accent-colors {
+  width: 15px;
+  height: 15px;
+  border-radius: $border-radius;
+  margin: 0 2.5px;
+  cursor: pointer;
+}

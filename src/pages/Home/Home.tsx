@@ -6,29 +6,13 @@ import Message from '../../components/Message/Message';
 import OnlineStatus from '../../components/status/Status';
 import ChatInput from '../../components/ChatInput/ChatInput';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import {addTheme} from '../../utils/helpers/Theme';
 
 const audio = require('../../assets/fingerlicking-message-tone.mp3');
 
 const Home = () => {
 
     const date = new Date();
-
-    const toggleTheme = () => {
-        if (localStorage.getItem('theme') === 'dark') {
-            localStorage.removeItem('theme');
-        } else {
-            localStorage.setItem('theme', 'dark');
-        }
-        addTheme();
-    };
-
-    const addTheme = () => {
-        if (localStorage.getItem('theme') === 'dark') {
-            document.querySelector('body')?.classList.remove('dark');
-        } else {
-            document.querySelector('body')?.classList.add('dark');
-        }
-    };
 
     useEffect(addTheme, []);
 
@@ -48,8 +32,7 @@ const Home = () => {
                                     <OnlineStatus online={true}/>
                                 </div>
                             </div>
-                            <EllipsisOutlined style={{fontSize: '22px', transform: 'rotate(90deg)'}}
-                                              onClick={toggleTheme}/>
+                            <EllipsisOutlined style={{fontSize: '22px', transform: 'rotate(90deg)'}}/>
                         </div>
                         <div className="chat__dialog-messages-wrap">
                             <div className="chat__dialog-messages">
@@ -346,3 +329,6 @@ const Home = () => {
 };
 
 export default Home;
+
+export class toggleTheme {
+}

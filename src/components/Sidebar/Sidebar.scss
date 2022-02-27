@@ -20,6 +20,7 @@
     .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
       border-radius: 0 12px 12px 0;
       background: $input-search-background-color;
+      transition: 0s;
     }
 
     .ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
@@ -43,7 +44,8 @@
     }
 
     button {
-      border-radius: $border-radius;
+      border-color: $accent-color !important;
+      background: $accent-color !important;
     }
 
     .ant-input-wrapper .ant-input-group, input {

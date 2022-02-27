@@ -1,7 +1,7 @@
 @import './colors';
 
 $bubble: #202020;
-$accent-color: #1ee6e6;
+$accent-color: var(--accent-color);
 $message-typing-blue: #E5EDFF;
 $green: #0ac630;
 $light-black: #2f2f2f;
@@ -12,6 +12,7 @@ $chat-bg: var(--chat-background);
 $scroll-thumb-color: var(--scroll-thumb-color);
 $scroll-bg-color: var(--scroll-bg-color);
 $input-bg-color: #f7f8f9;
+$dropdown-menu-color: var(--dropdown-menu-color);
 $default-font-color: var(--default-font-color);
 $secondary-font-color: var(--secondary-font-color);
 $hover-color: var(--hover-color);
@@ -26,6 +27,7 @@ $font-me-color: #FFFFFF;
 $font-count-color: #FFFFFF;
 $input-search-background-color: var(--input-search-background-color);
 $input-search-button-color: var(--input-search-button-color);
+$switch-color: var(--switch-color);
 
 %hover {
   background: $hover-color;

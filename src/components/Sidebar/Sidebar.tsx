@@ -1,23 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Sidebar.scss';
 import {MenuOutlined} from '@ant-design/icons';
 import Dialogs from '../Dialogs/Dialogs';
 import Search from 'antd/es/input/Search';
 import {Input} from 'antd';
+import DropdownMenu from '../DropdownMenu/DropdownMenu';
 
 const Sidebar = () => {
 
     const onSearch = ({value}: any) => console.log(value);
     const {Search} = Input;
     const groupNames = ['All', 'Друзья', 'Семья', 'Учеба', 'Работа', 'Незнакомцы', 'Стартап', 'дела'];
+    const [isShowMenu, setIsShowMenu] = useState(false);
+    const toggleMenu = () => setIsShowMenu(!isShowMenu);
 
     return (<>
             <div className="chat__sidebar">
                 <div className="chat__sidebar-search">
                     <MenuOutlined style={{fontSize: 20, cursor: 'pointer'}}
-                                  className='chat__sidebar-search-img'/>
+                                  className='chat__sidebar-search-img'
+                                  onClick={toggleMenu}/>
+                    <DropdownMenu isVisible={isShowMenu}/>
                     <Search placeholder="Search" allowClear onPressEnter={onSearch} enterButton
-                            size='large' style={{borderRadius: 40,}}/>
+                            size='large' style={{borderRadius: 40}}/>
                 </div>
                 <div className="chat__sidebar-groups">
                     <div className="chat__sidebar-groups-wrap">

@@ -44,7 +44,7 @@
       svg {
         color: $default-font-color;
       }
-      
+
       span {
         display: flex;
         width: 35px;
@@ -107,6 +107,7 @@
 .ant-input {
   background: $chat-bg;
   transition: all 0s;
+  border: 0;
 }
 
 

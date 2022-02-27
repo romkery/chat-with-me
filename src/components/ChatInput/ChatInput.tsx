@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ChatInput.scss';
 import {Input} from 'antd';
 import {AudioOutlined, PaperClipOutlined, SendOutlined, SmileOutlined} from '@ant-design/icons';
 
 const ChatInput = ({isMe, isChecked}: PropsType) => {
 
-    let message = null;
+    const [message, setMessage] = useState(null);
 
-    const onSearch = ({value}: any) => message = value;
+    const onSearch = (el: any) => setMessage(el.target.value);
 
     return (
         <>
@@ -16,7 +16,7 @@ const ChatInput = ({isMe, isChecked}: PropsType) => {
                     <div className="chat-input__smile-btn">
                         <span><SmileOutlined/></span>
                     </div>
-                    <Input placeholder="Message" allowClear onPressEnter={onSearch}
+                    <Input placeholder="Message" onChange={onSearch}
                            size='large' style={{borderRadius: 12,}}/>
                     <div className="chat-input__clip">
                         <PaperClipOutlined/>
