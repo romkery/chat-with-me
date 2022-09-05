@@ -51,10 +51,15 @@
     border-radius: 40px;
     cursor: pointer;
     margin-left: 6px;
-    background: $chat-bg;
+    background-color: $chat-bg;
 
     &:hover {
-      opacity: .8;
+      background-color: $hover-color;
+    }
+
+    &:active {
+      border: 1.5px solid $accent-color;
+      transition: $transition;
     }
   }
 

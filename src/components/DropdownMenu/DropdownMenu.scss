@@ -11,7 +11,6 @@
   .ant-dropdown-menu-item {
     color: $default-font-color;
     padding: 10px 10px;
-    transition: 0s;
 
     .ant-dropdown-menu-title-content {
       display: flex;
@@ -51,6 +50,7 @@
 
     .ant-switch-checked {
       background-color: $accent-color;
+      transition: $transition;
     }
 
     .ant-switch-handle {

@@ -6,6 +6,18 @@ import {AccentColors, addAccent, toggleAccent, toggleTheme} from '../../utils/he
 
 const DropdownMenu: FC<PropsType> = ({isVisible}) => {
 
+        // const dropdown = document.querySelector('.menu-accent-colors') as HTMLElement;
+        // //
+        // // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // // @ts-ignore
+        // dropdown.onmouseleave(() => {
+        //     dropdown.style.display = 'none';
+        // });
+        //
+        // dropdown.addEventListener('mouseleave', e => {
+        //     dropdown.style.display = 'none';
+        // });
+
         useEffect(() => addAccent(), []);
 
         const menu = (
@@ -48,5 +60,5 @@ export default DropdownMenu;
 
 type PropsType =
     {
-        isVisible: boolean
+        isVisible: boolean;
     }

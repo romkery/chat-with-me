@@ -8,7 +8,6 @@ import playSvg from '../../assets/img/play.svg';
 import WaveSvg from '../../assets/img/wave';
 
 const Message: FC<PropsType> = ({avatar, text, date, user, isMe, isChecked, attachments, isTyping, audio}) => {
-        console.log(isMe);
         return (
             <div className={classNames('message', {
                 'message--isMe': isMe,

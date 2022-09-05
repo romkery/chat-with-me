@@ -75,9 +75,11 @@ const LoginForm = () => {
                     </Form.Item>
 
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" size='large' className="login-form-button">
-                            Sign in
-                        </Button>
+                        <Link to="/im/*">
+                            <Button type="primary" htmlType="submit" size='large' className="login-form-button">
+                                Sign in
+                            </Button>
+                        </Link>
                     </Form.Item>
                     <Link className='auth__register-link' to='/register'>Register</Link>
                 </Form>

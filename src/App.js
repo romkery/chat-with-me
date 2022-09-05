@@ -2,14 +2,18 @@ import './styles/App.scss';
 import {BrowserRouter as Router, useRoutes} from 'react-router-dom';
 import {compose} from 'redux';
 import 'antd/dist/antd.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Routes from './routes';
+import {addAccent, addTheme} from './utils/helpers/Theme';
 
 const App = () => {
 
     const [isAuth, setIsAuth] = useState(true);
     const routes = useRoutes(Routes);
-    console.log(routes);
+
+    useEffect(() => {
+        addTheme(), addAccent();
+    }, []);
     return (
         <div className='wrapper'>
             <div className="App">

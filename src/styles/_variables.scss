@@ -28,6 +28,7 @@ $font-count-color: #FFFFFF;
 $input-search-background-color: var(--input-search-background-color);
 $input-search-button-color: var(--input-search-button-color);
 $switch-color: var(--switch-color);
+$transition: all 0.2s;
 
 %hover {
   background: $hover-color;

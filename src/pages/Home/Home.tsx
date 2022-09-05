@@ -1,20 +1,39 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Home.scss';
-import {EllipsisOutlined} from '@ant-design/icons';
+import {ArrowDownOutlined, EllipsisOutlined} from '@ant-design/icons';
 import './../../styles/layouts/_chat.scss';
 import Message from '../../components/Message/Message';
 import OnlineStatus from '../../components/status/Status';
 import ChatInput from '../../components/ChatInput/ChatInput';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import {addTheme} from '../../utils/helpers/Theme';
 
 const audio = require('../../assets/fingerlicking-message-tone.mp3');
 
 const Home = () => {
 
+    console.log('home');
+
     const date = new Date();
 
-    useEffect(addTheme, []);
+    const [test, setTest] = useState(false);
+
+    const toggle = () => console.log('hayabusa');
+
+    const showSidebar = () => {
+        const sidebar = document.querySelector('.chat__sidebar');
+        sidebar.style.display = 'block';
+        document.querySelector('.chat__dialog').style.display = 'none';
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 700) {
+                setTest(true);
+            } else {
+                setTest(false);
+            }
+        });
+    }, []);
 
     return (
         <>
@@ -24,11 +43,17 @@ const Home = () => {
                     <div className="chat__dialog">
                         <div className="chat__dialog-header">
                             <div className="chat__dialog-header-center">
+                                {test &&
+                                <ArrowDownOutlined
+                                    style={{fontSize: '20px', transform: 'rotate(90deg)', marginLeft: '10px'}}
+                                    onClick={showSidebar}/>
+                                }
                                 <img
                                     src="https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1"
                                     alt="user_avatar"/>
                                 <div>
-                                    <b className="chat__dialog-header-username">Роман Дмитриев</b>
+                                    <b className="chat__dialog-header-username" onClick={toggle}>Роман
+                                        Дмитриев</b>
                                     <OnlineStatus online={true}/>
                                 </div>
                             </div>

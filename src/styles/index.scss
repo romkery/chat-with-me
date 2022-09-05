@@ -10,6 +10,11 @@ body, html, #root, .wrapper, .App {
 
 * {
   outline: none;
+
+  &::selection {
+    color: $default-font-color;
+    background: transparentize(#0077f6, 0.7) !important;
+  }
 }
 
 html {

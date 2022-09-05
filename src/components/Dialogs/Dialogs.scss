@@ -61,6 +61,7 @@
 
       &-top {
         display: flex;
+        justify-content: space-between;
 
         b {
           color: $default-font-color;
@@ -70,7 +71,7 @@
         }
 
         span {
-          opacity: 0.4;
+          color: $secondary-font-color
         }
       }
 
@@ -100,6 +101,7 @@
       text-align: center;
       line-height: 17px;
       font-size: 11px;
+      transition: $transition;
     }
 
     &.active,

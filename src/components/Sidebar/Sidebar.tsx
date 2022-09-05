@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Sidebar.scss';
 import {MenuOutlined} from '@ant-design/icons';
 import Dialogs from '../Dialogs/Dialogs';
@@ -14,6 +14,10 @@ const Sidebar = () => {
     const [isShowMenu, setIsShowMenu] = useState(false);
     const toggleMenu = () => setIsShowMenu(!isShowMenu);
 
+    useEffect(() => {
+        console.log('ya zapustilas');
+    }, []);
+
     return (<>
             <div className="chat__sidebar">
                 <div className="chat__sidebar-search">
@@ -21,13 +25,13 @@ const Sidebar = () => {
                                   className='chat__sidebar-search-img'
                                   onClick={toggleMenu}/>
                     <DropdownMenu isVisible={isShowMenu}/>
-                    <Search placeholder="Search" allowClear onPressEnter={onSearch} enterButton
+                    <Search placeholder="Search" allowClear enterButton
                             size='large' style={{borderRadius: 40}}/>
                 </div>
                 <div className="chat__sidebar-groups">
                     <div className="chat__sidebar-groups-wrap">
-                        {groupNames.map(el =>
-                            <div className="group-item" key={el}>
+                        {groupNames.map((el, index) =>
+                            <div className="group-item" key={index}>
                                 <span>{el}</span>
                             </div>
                         )}
@@ -86,7 +90,7 @@ const Sidebar = () => {
                             },
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 1,
                                 fullName: 'Anita Heath',
@@ -103,7 +107,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 11,
                                 fullName: 'Mayra Dalton',
@@ -120,7 +124,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 21,
                                 fullName: 'Carter Ferrell',
@@ -138,7 +142,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 31,
                                 fullName: 'Horton Rich',
@@ -155,7 +159,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 41,
                                 fullName: 'Edith Mejia',
@@ -172,7 +176,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 51,
                                 fullName: 'Mcknight Mcfadden',
@@ -189,7 +193,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 61,
                                 fullName: 'Allie Petersen',
@@ -206,7 +210,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 71,
                                 fullName: 'Parks Ward',
@@ -224,7 +228,7 @@ const Sidebar = () => {
                             isChecked: false
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 81,
                                 fullName: 'Juana Keller',
@@ -241,7 +245,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 91,
                                 fullName: 'Fran Kerr',
@@ -258,7 +262,7 @@ const Sidebar = () => {
                             isChecked: false
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 101,
                                 fullName: 'Weber Hensley',
@@ -275,7 +279,7 @@ const Sidebar = () => {
                             isChecked: false
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 111,
                                 fullName: 'Houston Huff',
@@ -293,7 +297,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 121,
                                 fullName: 'Roth Parsons',
@@ -310,7 +314,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 131,
                                 fullName: 'Austin Reese',
@@ -327,7 +331,7 @@ const Sidebar = () => {
                             isChecked: false
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 141,
                                 fullName: 'Parker Savage',
@@ -344,7 +348,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 151,
                                 fullName: 'Jeannette Dunn',
@@ -361,7 +365,7 @@ const Sidebar = () => {
                             isChecked: false
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 161,
                                 fullName: 'Dorothea Kramer',
@@ -378,7 +382,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 171,
                                 fullName: 'Imelda Frederick',
@@ -396,7 +400,7 @@ const Sidebar = () => {
                             isChecked: true
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 181,
                                 fullName: 'Jolene Maddox',
@@ -414,7 +418,7 @@ const Sidebar = () => {
                             isChecked: false
                         },
                         {
-                            _id: 0.8220885281458068,
+                            _id: Math.random(),
                             user: {
                                 _id: 191,
                                 fullName: 'Holmes Eaton',
