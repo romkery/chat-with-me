@@ -49,7 +49,7 @@ const Home = () => {
                                     onClick={showSidebar}/>
                                 }
                                 <img
-                                    src="https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1"
+                                    src="https://sun9-west.userapi.com/sun9-37/s/v1/ig2/Ye99m5cau03zHl0ML3CPbwascm0oYTpRjwC2On35Mm_seuERWwpvyvii_T4s1SB5BizjpZIDoh8C9AiF2DNjdbMc.jpg?size=960x1280&quality=95&type=album"
                                     alt="user_avatar"/>
                                 <div>
                                     <b className="chat__dialog-header-username" onClick={toggle}>Роман
