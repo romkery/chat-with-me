@@ -63,7 +63,7 @@ const Home = () => {
                             <div className="chat__dialog-messages">
                                 <Message
                                     avatar='https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1'
-                                    text='Привет, как дела у бродяги-недосимпотяги?'
+                                    text='Привет, как дела?'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     isMe={true}
@@ -76,8 +76,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'
-                                    text='Друг мой, друг мой,
-                            Я очень и очень болен.'
+                                    text='Я приболел'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     attachments={[
@@ -97,8 +96,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'
-                                    text='Друг мой, друг мой,
-                            Я очень и очень болен.'
+                                    text='Я приболел'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     attachments={[
@@ -110,7 +108,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1'
-                                    text='Привет, как дела у бродяги-недосимпотяги?'
+                                    text='Привет, как дела?'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     isMe={true}
@@ -123,8 +121,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'
-                                    text='Друг мой, друг мой,
-                            Я очень и очень болен.'
+                                    text='Я приболел'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     attachments={[
@@ -144,8 +141,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'
-                                    text='Друг мой, друг мой,
-                            Я очень и очень болен.'
+                                    text='Я приболел'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     attachments={[
@@ -157,7 +153,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1'
-                                    text='Привет, как дела у бродяги-недосимпотяги?'
+                                    text='Привет, как дела?'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     isMe={true}
@@ -170,8 +166,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'
-                                    text='Друг мой, друг мой,
-                            Я очень и очень болен.'
+                                    text='Я приболел'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     attachments={[
@@ -191,8 +186,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'
-                                    text='Друг мой, друг мой,
-                            Я очень и очень болен.'
+                                    text='Я приболел'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     attachments={[
@@ -204,7 +198,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1'
-                                    text='Привет, как дела у бродяги-недосимпотяги?'
+                                    text='Привет, как дела?'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     isMe={true}
@@ -217,8 +211,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'
-                                    text='Друг мой, друг мой,
-                            Я очень и очень болен.'
+                                    text='Я приболел'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     attachments={[
@@ -238,8 +231,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'
-                                    text='Друг мой, друг мой,
-                            Я очень и очень болен.'
+                                    text='Я приболел'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     attachments={[
@@ -251,7 +243,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1'
-                                    text='Привет, как дела у бродяги-недосимпотяги?'
+                                    text='Привет, как дела?'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     isMe={true}
@@ -264,8 +256,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'
-                                    text='Друг мой, друг мой,
-                            Я очень и очень болен.'
+                                    text='Я приболел'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     attachments={[
@@ -285,8 +276,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'
-                                    text='Друг мой, друг мой,
-                            Я очень и очень болен.'
+                                    text='Я приболел'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     attachments={[
@@ -298,7 +288,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-10.userapi.com/s/v1/ig2/WnnXZ8qMFGXG57edF-YcbysK_efKcuBJkMgytSu6E2Z9W9pmvnDL9P-5w7YvL3s9jJ7O8H6jeNkOaseTrCrPCWud.jpg?size=400x400&quality=96&crop=0,0,599,599&ava=1'
-                                    text='Привет, как дела у бродяги-недосимпотяги?'
+                                    text='Привет, как дела?'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     isMe={true}
@@ -311,8 +301,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'
-                                    text='Друг мой, друг мой,
-                            Я очень и очень болен.'
+                                    text='Я приболел'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     attachments={[
@@ -332,8 +321,7 @@ const Home = () => {
                                 />
                                 <Message
                                     avatar='https://sun4-12.userapi.com/s/v1/ig2/lq01CX3y3ZS5coZ3Zk0j6oC3oI9URHS3ONs7PKUV8yynvJLVuNCXH0mzWCVxj4hS3NRIKmCGSkHciJXQJk_liuQZ.jpg?size=400x400&quality=96&crop=0,306,983,983&ava=1'
-                                    text='Друг мой, друг мой,
-                            Я очень и очень болен.'
+                                    text='Я приболел'
                                     date={date}
                                     user={{fullName: 'Roman Dmitriev'}}
                                     attachments={[
